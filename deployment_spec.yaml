@@ -14,22 +14,22 @@ steps:
     command: yum update
     runAs: root
     timeoutInSeconds: 300
-    - stepType: Command 
+- stepType: Command 
     name: HTTP_Install
     command: yum install httpd -y
     runAs: root
     timeoutInSeconds: 300
-    - stepType: Command 
+- stepType: Command 
     name: HTTPD+Start
     command: service httpd start
     runAs: root
     timeoutInSeconds: 300
-  - stepType: Command 
+- stepType: Command 
     name: CopyFiles
     command: cp -a /tmp/site/public/. /var/www/html/
     runAs: root
     timeoutInSeconds: 300
-  - stepType: Command 
+- stepType: Command 
     name: CopyFiles
     command: chmod -R u=rwx,go=rx /var/www/html
     runAs: root
